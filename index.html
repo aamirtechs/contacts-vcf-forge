@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contacts VCF Forge: Convert Excel or CSV contacts to a phone-ready VCF free with no limits</title>
+<meta name="description" content="Convert Excel or CSV contacts to a phone-ready VCF free with no limits. Field mapping, duplicate merging by phone or email, chunk splitting and vCard 3.0 or 4.0 output.">
+<meta name="keywords" content="CSV to vCard converter free unlimited, convert Excel contacts to VCF, CSV to VCF Android iPhone contacts, merge VCF files online">
+<meta name="author" content="Amir Hussain"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aamirtechs.github.io/contacts-vcf-forge/"><link rel="icon" href="favicon.svg"><meta name="theme-color" content="#0b1f3a">
+<meta property="og:type" content="website"><meta property="og:title" content="Contacts VCF Forge"><meta property="og:description" content="Convert Excel or CSV contacts to a phone-ready VCF free with no limits. Field mapping, duplicate merging by phone or email, chunk splitting and vCard 3.0 or 4.0 output."><meta property="og:url" content="https://aamirtechs.github.io/contacts-vcf-forge/">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Contacts VCF Forge"><meta name="twitter:description" content="Convert Excel or CSV contacts to a phone-ready VCF free with no limits. Field mapping, duplicate merging by phone or email, chunk splitting and vCard 3.0 or 4.0 output.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f3a;--navy2:#122c50;--gold:#d4a72c;--ink:#16233a;--muted:#5a6a84;--line:#e3e9f2;--bg:#f6f8fb;--card:#ffffff}
+*{box-sizing:border-box} body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:40px 20px 30px;text-align:center}
+header h1{font-family:Sora,sans-serif;font-size:2.1rem;margin:0 0 10px} header h1 span{color:var(--gold)}
+header p{max-width:720px;margin:0 auto 14px;opacity:.92;line-height:1.55}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.stats span{background:rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;font-size:.85rem}
+main{max-width:960px;margin:0 auto;padding:24px 16px 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 4px 18px rgba(11,31,58,.06)}
+label{font-weight:700;font-size:.9rem;display:block;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit}
+textarea{min-height:110px} .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:700px){.row{grid-template-columns:1fr}}
+.btn-run{background:var(--gold);color:#16233a;border:0;padding:12px 22px;border-radius:9px;font-weight:800;cursor:pointer;margin-top:16px}
+.btn-ghost{background:#fff;border:1px solid var(--line);padding:10px 16px;border-radius:9px;cursor:pointer;font-weight:700}
+pre{background:#0b1f3a;color:#eaf0fa;padding:14px;border-radius:10px;overflow:auto;white-space:pre-wrap;word-break:break-word;font-size:.85rem}
+.privacy{color:var(--muted);font-size:.9rem;margin-top:12px}
+section.features{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:18px}
+footer{background:var(--navy);color:#dbe6f5;text-align:center;padding:26px 16px;line-height:1.6} footer a{color:var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:.9rem} th,td{border-bottom:1px solid var(--line);padding:7px;text-align:left}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Contacts VCF Forge","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Amir Hussain","url":"https://aamirtechs.com"},"url":"https://aamirtechs.github.io/contacts-vcf-forge/"}</script>
+</head><body><header><h1>Contacts <span>VCF</span> Forge</h1><p>Convert a contacts CSV or spreadsheet to a phone-ready .vcf with field mapping, duplicate merging and file splitting, and no contact limits.</p><div class="stats"><span>Free</span><span>100% in your browser</span><span>No sign-up</span></div></header><main><div class="card">
+<label>Upload CSV or XLSX</label><input type="file" id="file" accept=".csv,.xlsx,.xls">
+<label>Or paste CSV</label><textarea id="csv">First Name,Last Name,Phone,Email,Company
+Sam,Example,+1 555 0100,sam@example.com,Example Co
+Sam,Example,+15550100,sam@example.com,Example Co
+Jo,Test,+44 20 7123 4567,jo@example.org,Test Ltd</textarea>
+<div class="row"><div><label>vCard version</label><select id="ver"><option value="3.0">3.0 (widest support)</option><option value="4.0">4.0</option></select></div><div><label>Contacts per file (0 means single file)</label><input id="per" type="number" value="0"></div></div>
+<button class="btn-run" id="run">Convert and check duplicates</button> <button class="btn-ghost" id="dl">Download .vcf</button> <button class="btn-ghost" id="exc">Download exceptions CSV</button>
+<pre id="out">Results will appear here.</pre>
+<p class="privacy">Runs 100% in your browser. Your files never leave this device.</p></div>
+<section class="features"><h2>How it works</h2><ul><li>CSV and XLSX import with automatic and manual field mapping.</li><li>vCard 3.0 or 4.0 output, single file or split into chunks for picky importers.</li><li>Duplicate detection and merge on phone or email, with a problem-row report.</li><li>Phone cleanup keeps a leading plus and flags numbers that look too short or long.</li></ul></section>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script src="src/logic.js"></script>
+<script>
+var L=window.ContactsVcfForge;var lastContacts=[];var lastProblems=[];
+document.getElementById("file").onchange=function(e){var f=e.target.files[0];if(!f)return;
+if(/\.xlsx?$/i.test(f.name)&&typeof XLSX!=="undefined"){f.arrayBuffer().then(function(b){var wb=XLSX.read(b);document.getElementById("csv").value=XLSX.utils.sheet_to_csv(wb.Sheets[wb.SheetNames[0]]);});}
+else f.text().then(function(t){document.getElementById("csv").value=t;});};
+function convert(){var rows=L.parseCSV(document.getElementById("csv").value);var map=L.guessMapping(rows[0]||[]);var objs=L.rowsToObjects(rows);lastProblems=[];
+var raw=objs.map(function(o,i){var c=L.mapRow(o,map);(o[map.phone]?[o[map.phone]]:[]).forEach(function(p){var cl=L.cleanPhone(p);if(!cl.ok)lastProblems.push({row:i+2,issue:cl.issue,value:p});});return c;});
+var dupes=L.findDuplicates(raw);lastContacts=L.dedupe(raw);
+document.getElementById("out").textContent="Contacts: "+raw.length+" in, "+lastContacts.length+" after merge. Duplicates merged: "+dupes.length+". Problem rows: "+lastProblems.length+(lastProblems.length?"\n"+lastProblems.map(function(p){return "Row "+p.row+": "+p.issue+" ("+p.value+")";}).join("\n"):"");
+return lastContacts;}
+document.getElementById("run").onclick=convert;
+document.getElementById("dl").onclick=function(){var cs=lastContacts.length?lastContacts:convert();var ver=document.getElementById("ver").value;var per=Number(document.getElementById("per").value)||0;
+if(per>0){L.splitChunks(cs,per).forEach(function(ch,i){dl(new Blob([L.buildVCF(ch,ver)],{type:"text/vcard"}),"contacts-"+(i+1)+".vcf");});}
+else dl(new Blob([L.buildVCF(cs,ver)],{type:"text/vcard"}),"contacts.vcf");};
+function dl(blob,name){var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();}
+document.getElementById("exc").onclick=function(){var csv="row,issue,value\n"+lastProblems.map(function(p){return p.row+",\" "+p.issue+"\",\""+p.value+"\"";}).join("\n");dl(new Blob([csv],{type:"text/csv"}),"exceptions.csv");};
+</script></main><footer>Built by Amir Hussain, operations manager and founder of <a href="https://aamirtechs.com" target="_blank" rel="noopener">AamirTechs: operations, customer support and e-commerce services</a>.<br><a href="https://github.com/aamirtechs" target="_blank" rel="noopener">More open source tools on GitHub</a></footer></body></html>
